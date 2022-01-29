@@ -7,7 +7,7 @@ app.listen(port, function(){
 });
 const { searchVideo } = require('usetube');
 
-app.get('/:q', async function (req, res) {
+app.get('/', async function (req, res) {
 	res.send('YouTube get link mp3 download')
 })
 
