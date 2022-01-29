@@ -1,7 +1,7 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
 const app = require('express')();
-const port = process.PORT || 3000
+const port = process.env.PORT || 3000
 app.listen(port, function(){
 	console.log('Server Online em: http://localhost:'+port);
 });
