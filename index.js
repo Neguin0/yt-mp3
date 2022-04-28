@@ -13,11 +13,11 @@ app.get('/', async function (req, res) {
 
 app.get('/:q', async function (req, res) {
 	const q = await searchVideo(req.params.q);
-	const audio = await audioY2Dl("https://youtu.be/"+q.videos[0].id);
+	const audio = await audio("https://youtu.be/"+q.videos[0].id);
 	res.send(audio[0].link);
 })
 
-async function audioY2Dl(baseUrl) {
+async function audio(baseUrl) {
 	const result = [];
 	try {
 		await axios({
@@ -40,7 +40,7 @@ async function audioY2Dl(baseUrl) {
 	};
 };
 
-async function otherY2Dl(baseUrl) {
+async function other(baseUrl) {
 	const result = [];
 	try {
 		await axios({
@@ -63,7 +63,7 @@ async function otherY2Dl(baseUrl) {
 	};
 };
 
-async function videoY2Dl(baseUrl) {
+async function video(baseUrl) {
 	const result = [];
 	try {
 		await axios({
